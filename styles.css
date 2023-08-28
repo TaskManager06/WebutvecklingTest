@@ -1,0 +1,48 @@
+body {
+    background-color: powderblue;
+  }
+
+div.main {
+    
+text-align: center;
+border:3px snow;
+font-family:  "Växjö Now",sans-serif;;
+}
+ 
+
+.title{
+font-size: 50px;
+
+}
+
+.titleBackground{
+color: rgb(255, 0, 0);
+height: 50px;
+width: 500px;
+}
+
+img{
+    position:relative;
+    border-radius: 3%;
+
+    
+}
+
+@-webkit-keyframes animationT {
+    from
+    {-webkit-transform:top(0px);
+    }
+    to
+    { -webkit-transform:top(1000px);
+    }
+    
+    
+    
+    }
+    
+
+img:hover{
+    -webkit-animation: animationT 2s linear infinite;
+
+}
+
