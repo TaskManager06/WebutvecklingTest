@@ -1,63 +1,81 @@
 body {
-    background-color: powderblue;
+    background-color: #900C3F;
+
+    text-align: center;
+    border:3px snow;
+    font-family:  "Växjö Now",sans-serif;
+    display:grid;
+    grid-template-rows: 95px auto auto;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
   }
 
-div.main {
+  header{
+grid-area: header;
+font-size: 22px;
+font-family:Arial;
+
+  }
+
     
-text-align: center;
-border:3px snow;
-font-family:  "Växjö Now",sans-serif;;
+main{
+grid-area:main;
+display:grid;
+grid-template-columns: 1fr 1fr 1fr;
+overflow-wrap: break-word;
+column-gap: 30px;
+grid-template-areas:
+
+"left middle right";
 }
+
+.left{
+
+grid-area:left;
+border: 3px solid #F8DE22;
+border-radius: 30px;
+}
+.middle{
+
+background-color: #C70039;
+color:#F8DE22;
+grid-area:middle;
+border-radius: 30px;
+
+}
+
+.right{
+grid-area:right;
+    
+    }
  
 
-.title{
-font-size: 50px;
-}
-.program{
+footer{
+grid-area:footer;
 
-background-color: blueviolet;
-width: 500px;
-margin: 0 auto;
-border-radius: 5px;
-}
-
-.Rect{
-
-background-color: blue;
-width: 50px;
-height: 50px;
-margin: 0 auto;
 
 }
 
-.titleBackground{
-color: rgb(255, 0, 0);
-height: 50px;
-width: 500px;
+footer>a{
+
+text-decoration: none;
+
+
 }
+
+
+
+
+
 
 img{
+    justify-content: center;
+    margin-top: 30px;
     position:relative;
     border-radius: 3%;
 
     
-}
-
-@-webkit-keyframes animationT {
-    from
-    {-webkit-transform:top(0px);
-    }
-    to
-    { -webkit-transform:top(1000px);
-    }
-    
-    
-    
-    }
-    
-
-img:hover{
-    -webkit-animation: animationT 2s linear infinite;
-
 }
 
