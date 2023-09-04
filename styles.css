@@ -31,29 +31,101 @@ grid-template-areas:
 "left middle right";
 }
 
-.left{
+
+.containerLeft>label{
+height:100%;
+width: 100%;
+
+
+}
+.checkboxLeft:checked + .label .left{
+
+    animation: left 3s forwards;
+    z-index:50;
+    position: relative;
+}
+.containerLeft{
 
 grid-area:left;
-border: 3px solid #F8DE22;
-border-radius: 30px;
 }
-.middle{
+input[type=checkbox]{
+    display: none;
+}
+.left{
 
+border: 3px solid #F94C10;
+border-radius: 30px;
+background-color: #C70039;
+z-index:50;
+
+
+}
+
+
+
+
+.containerMiddle>label{
+    height:100%;
+    width: 100%;
+    
+    
+    }
+.checkboxMiddle:checked + .label .middle{
+    
+    animation: middle 3s forwards;
+    z-index:50;
+
+    position: relative;
+}
+
+.containerMiddle{
+
+    grid-area:middle;
+
+
+}
+
+.middle{
 background-color: #C70039;
 color:#F8DE22;
-grid-area:middle;
 border-radius: 30px;
+z-index:50;
+height:85%;
 
 }
 
-.right{
+.containerRight>label{
+    height:100%;
+    width: 100%;
+    
+    
+    }
+.checkboxRight:checked + .label .right{
+    
+    animation: right 3s forwards;
+    z-index:50;
+
+    position: relative;
+}
+
+
+.containerRight{
 grid-area:right;
     
     }
  
 
+.right{
+
+background-color: #C70039;
+border-radius: 30px;
+z-index:50;
+
+}
+
 footer{
 grid-area:footer;
+z-index:1;
 
 
 }
@@ -74,8 +146,22 @@ img{
     justify-content: center;
     margin-top: 30px;
     position:relative;
-    border-radius: 3%;
+    border-radius: 30px;
 
     
 }
 
+@keyframes left {
+    from {transform:scale(1) translate(0px,0px);}
+    to {transform:scale(2) translate(220px,0px);}
+}
+
+@keyframes middle {
+    from {transform:scale(1); }
+    to {transform:scale(2);}
+}
+
+@keyframes right {
+    from {transform:scale(1) translate(0px,0px);}
+    to {transform:scale(2) translate(-220px,0px);}
+}
