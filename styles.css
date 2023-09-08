@@ -41,7 +41,6 @@ width: 100%;
 .checkboxLeft:checked + .label .left{
 
     animation: left 1.5s forwards;
-    z-index:50;
     position: relative;
 }
 
@@ -49,7 +48,6 @@ width: 100%;
 
 animation: leftBack 1.5s forwards;
 position:relative;
-z-index:2;
 
 }
 .containerLeft{
@@ -61,11 +59,9 @@ input[type=checkbox]{
 }
 .left{
 
-border: 3px solid #F94C10;
+border: 1px solid #F94C10;
 border-radius: 30px;
 background-color: #C70039;
-z-index:50;
-
 
 }
 
@@ -80,9 +76,7 @@ z-index:50;
     }
 .checkboxMiddle:checked + .label .middle{
     
-    animation: middle 3s forwards;
-    z-index:50;
-
+    animation: middle 1.5s forwards;
     position: relative;
 }
 
@@ -98,15 +92,33 @@ z-index:50;
 background-color: #C70039;
 color:#F8DE22;
 border-radius: 30px;
-z-index:50;
+border: 1px solid #C70039 ;
 }
+
+.middle:hover{
+    animation-name:middleHover;
+    animation-duration: 1;
+    
+    color:aqua;
+    
+}
+.right:hover{
+    animation:rightHover 0.5s none;
+    
+}
+
+.left:hover{
+    animation:leftHover 0.5s none;
+    
+}
+
 .checkboxMiddle:not(:checked) + .label .middle{
 
-    animation: middleBack 3s forwards;
+    animation: middleBack 1.5s forwards;
     position:relative;
-    z-index:2;
     
     }
+
 
 .containerRight>label{
     height:100%;
@@ -116,11 +128,11 @@ z-index:50;
     }
 .checkboxRight:checked + .label .right{
     
-    animation: right 3s forwards;
-    z-index:50;
+    animation: right 1.5s forwards;
 
     position: relative;
 }
+
 
 
 .containerRight{
@@ -133,16 +145,14 @@ grid-area:right;
 
 background-color: #C70039;
 border-radius: 30px;
-z-index:50;
+border: 1px solid #C70039;
 
 }
 
 .checkboxRight:not(:checked) + .label .right{
 
-    animation: rightBack 3s forwards;
+    animation: rightBack 1.5s forwards;
     position:relative;
-    z-index:2;
-    
 }
 
 footer{
@@ -174,33 +184,57 @@ img{
 }
 
 @keyframes left {
-    from {transform:scale(1) translate(0px,0px);}
-    to {transform:scale(2) translate(220px,0px);}
+    from {transform:scale(1) translate(0px,0px) rotate(1turn);z-index:1;}
+    to {transform:scale(2) translate(220px,0px) rotate(2turn);z-index:50;}
 }
 
 
 @keyframes leftBack {
-    from {transform:scale(2) translate(220px,0px);}
-    to {transform:scale(1) translate(0px,0px);}
+    from {transform:scale(2) translate(220px,0px);z-index:50;}
+    to {transform:scale(1) translate(0px,0px);z-index:1;}
 }
 
 @keyframes middle {
-    from {transform:scale(1); }
-    to {transform:scale(2);}
+    from {transform:scale(1); z-index:1;}
+    to {transform:scale(2);z-index:50;}
 }
 
 @keyframes middleBack {
-    from {transform:scale(2); }
-    to {transform:scale(1);}
+    from {transform:scale(2); z-index:50;}
+    to {transform:scale(1);z-index:1;}
 }
 
 @keyframes right {
-    from {transform:scale(1) translate(0px,0px);}
-    to {transform:scale(2) translate(-220px,0px);}
+    from {transform:scale(1) translate(0px,0px);z-index:1;}
+    to {transform:scale(2) translate(-220px,0px);z-index:50;}
 }
 
 
 @keyframes rightBack {
-    from {transform:scale(2) translate(-220px,0px);}
-    to {transform:scale(1) translate(0px,0px);}
+    from {transform:scale(2) translate(-220px,0px);z-index:50;}
+    to {transform:scale(1) translate(0px,0px);z-index:1;}
+}
+
+
+@keyframes middleHover{
+
+from {transform:scale(1); z-index:1;}
+to {transform:scale(1.1);z-index:50;}
+
+
+}
+
+@keyframes leftHover{
+
+    from {transform:scale(1); z-index:1;}
+    to {transform:scale(1.1);z-index:50;}
+
+}
+
+
+@keyframes rightHover{
+
+    from {transform:scale(1); z-index:1;}
+    to {transform:scale(1.1);z-index:50;}
+
 }
