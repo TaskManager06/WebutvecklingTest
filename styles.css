@@ -1,240 +1,83 @@
 body {
-    background-color: #900C3F;
+  background-color: #900c3f;
 
-    text-align: center;
-    border:3px snow;
-    font-family:  "Växjö Now",sans-serif;
-    display:grid;
-    grid-template-rows: 95px auto auto;
-    grid-template-areas: 
+  text-align: center;
+  border: 3px snow;
+  font-family: "Växjö Now", sans-serif;
+  display: grid;
+  grid-template-rows: 95px auto auto auto;
+  grid-template-areas:
     "header"
+    "nav"
     "main"
     "footer";
-  }
-
-  header{
-grid-area: header;
-font-size: 22px;
-font-family:Arial;
-
-  }
-
-    
-main{
-grid-area:main;
-display:grid;
-grid-template-columns: 1fr 1fr 1fr;
-overflow-wrap: break-word;
-column-gap: 30px;
-grid-template-areas:
-
-"left middle right";
+}
+nav {
+  grid-area: nav;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "leftNav middleNav rightNav";
 }
 
-
-.containerLeft>label{
-height:100%;
-width: 100%;
-
-
+nav > ul > li > a {
+  text-decoration: none;
 }
-.checkboxLeft:checked + .label .left{
-
-    animation: left 1.5s forwards;
-    position: relative;
+li {
+  display: inline-block;
+  border: 4px solid;
+  background-color: whitesmoke;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
-.checkboxLeft:not(:checked) + .label .left{
-
-animation: leftBack 1.5s forwards;
-position:relative;
-
-}
-.containerLeft{
-
-grid-area:left;
-}
-input[type=checkbox]{
-    display: none;
-}
-.left{
-
-border: 1px solid #F94C10;
-border-radius: 30px;
-background-color: #C70039;
-
+header {
+  grid-area: header;
+  font-size: 22px;
+  font-family: Arial;
 }
 
-
-
-
-.containerMiddle>label{
-    height:100%;
-    width: 100%;
-    
-    
-    }
-.checkboxMiddle:checked + .label .middle{
-    
-    animation: middle 1.5s forwards;
-    position: relative;
+main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow-wrap: break-word;
+  column-gap: 30px;
+  grid-template-areas: "left middle right";
+}
+.left {
+  grid-area: left;
+  border: 1px solid #f94c10;
+  border-radius: 30px;
+  background-color: #c70039;
 }
 
-.containerMiddle{
-
-    grid-area:middle;
-
-
+.middle {
+  grid-area: middle;
+  background-color: #c70039;
+  color: #f8de22;
+  border-radius: 30px;
+  border: 1px solid #c70039;
 }
 
-.middle{
-    
-background-color: #C70039;
-color:#F8DE22;
-border-radius: 30px;
-border: 1px solid #C70039 ;
+.right {
+  grid-area: right;
+  background-color: #c70039;
+  border-radius: 30px;
+  border: 1px solid #c70039;
 }
 
-.middle:hover{
-    animation-name:middleHover;
-    animation-duration: 1;
-    
-    color:aqua;
-    
-}
-.right:hover{
-    animation:rightHover 0.5s none;
-    
+footer {
+  grid-area: footer;
+  z-index: 1;
 }
 
-.left:hover{
-    animation:leftHover 0.5s none;
-    
+footer > a {
+  text-decoration: none;
 }
 
-.checkboxMiddle:not(:checked) + .label .middle{
-
-    animation: middleBack 1.5s forwards;
-    position:relative;
-    
-    }
-
-
-.containerRight>label{
-    height:100%;
-    width: 100%;
-    
-    
-    }
-.checkboxRight:checked + .label .right{
-    
-    animation: right 1.5s forwards;
-
-    position: relative;
-}
-
-
-
-.containerRight{
-grid-area:right;
-    
-    }
- 
-
-.right{
-
-background-color: #C70039;
-border-radius: 30px;
-border: 1px solid #C70039;
-
-}
-
-.checkboxRight:not(:checked) + .label .right{
-
-    animation: rightBack 1.5s forwards;
-    position:relative;
-}
-
-footer{
-grid-area:footer;
-z-index:1;
-
-
-}
-
-footer>a{
-
-text-decoration: none;
-
-
-}
-
-
-
-
-
-
-img{
-    justify-content: center;
-    margin-top: 30px;
-    position:relative;
-    border-radius: 30px;
-
-    
-}
-
-@keyframes left {
-    from {transform:scale(1) translate(0px,0px) rotate(1turn);z-index:1;}
-    to {transform:scale(2) translate(220px,0px) rotate(2turn);z-index:50;}
-}
-
-
-@keyframes leftBack {
-    from {transform:scale(2) translate(220px,0px);z-index:50;}
-    to {transform:scale(1) translate(0px,0px);z-index:1;}
-}
-
-@keyframes middle {
-    from {transform:scale(1); z-index:1;}
-    to {transform:scale(2);z-index:50;}
-}
-
-@keyframes middleBack {
-    from {transform:scale(2); z-index:50;}
-    to {transform:scale(1);z-index:1;}
-}
-
-@keyframes right {
-    from {transform:scale(1) translate(0px,0px);z-index:1;}
-    to {transform:scale(2) translate(-220px,0px);z-index:50;}
-}
-
-
-@keyframes rightBack {
-    from {transform:scale(2) translate(-220px,0px);z-index:50;}
-    to {transform:scale(1) translate(0px,0px);z-index:1;}
-}
-
-
-@keyframes middleHover{
-
-from {transform:scale(1); z-index:1;}
-to {transform:scale(1.1);z-index:50;}
-
-
-}
-
-@keyframes leftHover{
-
-    from {transform:scale(1); z-index:1;}
-    to {transform:scale(1.1);z-index:50;}
-
-}
-
-
-@keyframes rightHover{
-
-    from {transform:scale(1); z-index:1;}
-    to {transform:scale(1.1);z-index:50;}
-
+img {
+  justify-content: center;
+  margin-top: 30px;
+  position: relative;
+  border-radius: 30px;
 }
