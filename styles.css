@@ -3,7 +3,7 @@ body {
 
   text-align: center;
   border: 3px snow;
-  font-family: "Växjö Now", sans-serif;
+  font-family:  sans-serif;
   display: grid;
   grid-template-rows: 95px auto auto auto;
   grid-template-areas:
@@ -17,25 +17,25 @@ nav {
   justify-content: center;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: "leftNav middleNav rightNav";
+  
 }
-
 nav > ul > li > a {
   text-decoration: none;
+  color:black;
 }
 li {
   display: inline-block;
   border: 4px solid;
-  background-color: whitesmoke;
+  border-radius:8px;
+  background-color:#c70039;
   padding-left: 50px;
   padding-right: 50px;
 }
-
 header {
   grid-area: header;
   font-size: 22px;
   font-family: Arial;
 }
-
 main {
   grid-area: main;
   display: grid;
@@ -50,7 +50,6 @@ main {
   border-radius: 30px;
   background-color: #c70039;
 }
-
 .middle {
   grid-area: middle;
   background-color: #c70039;
@@ -58,23 +57,19 @@ main {
   border-radius: 30px;
   border: 1px solid #c70039;
 }
-
 .right {
   grid-area: right;
   background-color: #c70039;
   border-radius: 30px;
   border: 1px solid #c70039;
 }
-
 footer {
   grid-area: footer;
   z-index: 1;
 }
-
 footer > a {
   text-decoration: none;
 }
-
 img {
   justify-content: center;
   margin-top: 30px;
